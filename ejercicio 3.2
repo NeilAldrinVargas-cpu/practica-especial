@@ -1,0 +1,40 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    // 1. Definimos constantes y variables
+    const int PESO_PAYASO = 112;
+    const int PESO_MUNECA = 75;
+
+    int cantPayasos, cantMunecas, pesoTotal;
+    
+    // En lugar de 'string', usamos un arreglo de caracteres (char array)
+    // El '100' es el número máximo de letras que permitirá el slogan
+    char slogan[100]; 
+
+    // 2. Entrada de datos
+    cout << "--- Sistema de Logistica Jugueteria ---" << endl;
+    cout << "Ingrese la cantidad de payasos vendidos: ";
+    cin >> cantPayasos;
+    cout << "Ingrese la cantidad de munecas vendidas: ";
+    cin >> cantMunecas;
+    
+    // Limpiamos el buffer para que no se salte la lectura del texto
+    cin.ignore(); 
+
+    cout << "Ingrese el slogan personalizado: ";
+    // Usamos cin.getline para capturar toda la frase con espacios
+    cin.getline(slogan, 100);
+
+    // 3. Cálculo
+    pesoTotal = (cantPayasos * PESO_PAYASO) + (cantMunecas * PESO_MUNECA);
+
+    // 4. Salida
+    cout << "\n========================================" << endl;
+    cout << "MENSAJE DEL PAQUETE: " << slogan << endl;
+    cout << "PESO TOTAL DEL ENVIO: " << pesoTotal << " gramos" << endl;
+    cout << "========================================" << endl;
+
+    return 0;
+}
