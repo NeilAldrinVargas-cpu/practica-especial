@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    // 1. Inicializamos nuestras variables
+    int numero = -35;       // Punto de partida
+    int suma = 0;           // Acumulador para la suma
+    int contador = 0;       // Para saber cuántos números hay (y calcular el promedio)
+
+    cout << "Numeros de -35 a 20:" << endl;
+
+    // 2. Ciclo While
+    while (numero <= 20) {
+        cout << numero << " "; // Imprime el número actual
+        
+        suma += numero;        // Sumamos el número actual al total
+        contador++;            // Incrementamos la cantidad de números procesados
+        numero++;       // IMPORTANTE: Incrementamos el número para no crear un ciclo infinito
+    }
+
+    // 3. Calculamos el promedio
+    // Usamos (float) para que la división sea precisa y no solo entera
+    float promedio = (float)suma / contador;
+
+    // 4. Resultados finales
+    cout << "\n\n-----------------------------" << endl;
+    cout << "Suma total: " << suma << endl;
+    cout << "Cantidad de numeros: " << contador << endl;
+    cout << "Promedio: " << promedio << endl;
+    cout << "-----------------------------" << endl;
+
+    return 0;
+}
