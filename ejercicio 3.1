@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    // Definimos los pesos constantes (en gramos)
+    const int PESO_PAYASO = 112;
+    const int PESO_MUNECA = 75;
+
+    int cantPayasos, cantMunecas;
+    int pesoTotal;
+    string slogan;
+
+    // Entrada de datos
+    cout << "--- Sistema de Logística Juguetería ---" << endl;
+    cout << "Ingrese la cantidad de payasos vendidos: ";
+    cin >> cantPayasos;
+    cout << "Ingrese la cantidad de muñecas vendidas: ";
+    cin >> cantMunecas;
+    
+    cin.ignore(); // Limpiar el buffer para leer el slogan
+    cout << "Ingrese el slogan personalizado para este paquete: ";
+    getline(cin, slogan);
+
+    // Cálculo del peso total
+    pesoTotal = (cantPayasos * PESO_PAYASO) + (cantMunecas * PESO_MUNECA);
+
+    // Salida de resultados
+    cout << "\n========================================" << endl;
+    cout << "MENSAJE DEL PAQUETE: " << slogan << endl;
+    cout << "PESO TOTAL DEL ENVÍO: " << pesoTotal << " gramos" << endl;
+    cout << "========================================" << endl;
+
+    return 0;
+}
