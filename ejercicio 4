@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int num, suma = 0, digito;
+
+    cout << "Ingrese un numero natural: ";
+    cin >> num;
+
+    // Guardamos el original para mostrarlo al final
+    int numOriginal = num;
+
+    // Procesamos el número mientras sea mayor a 0
+    while (num > 0) {
+        // 1. Extraer el último dígito usando el módulo 10
+        digito = num % 10;
+        
+        // 2. Acumularlo en la variable suma
+        suma += digito;
+        
+        // 3. Eliminar el último dígito dividiendo entre 10
+        num = num / 10;
+    }
+
+    cout << "La suma de los digitos de " << numOriginal << " es: " << suma << endl;
+
+    return 0;
+}
